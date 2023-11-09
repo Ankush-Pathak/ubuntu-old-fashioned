@@ -53,10 +53,10 @@ function build-provider-assert-ready {
     exit 255
   fi
 
-  if ! aws --profile "$AWS_PROFILE" ec2 describe-key-pairs --key-names "$AWS_KEYPAIR_NAME" 2>/dev/null >/dev/null; then
-    echo "error: no registered keypair named $AWS_KEYPAIR_NAME" >&2
-    exit 255
-  fi
+  # if ! aws --profile "$AWS_PROFILE" ec2 describe-key-pairs --key-names "$AWS_KEYPAIR_NAME" 2>/dev/null >/dev/null; then
+  #   echo "error: no registered keypair named $AWS_KEYPAIR_NAME" >&2
+  #   exit 255
+  # fi
 
   region=$(aws --profile "$AWS_PROFILE" configure get region)
 }
